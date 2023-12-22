@@ -204,6 +204,17 @@ module.exports = class Task{
         return path.join(this.getProjectFolderPath(), filename);
     }
 
+
+    getTilePath(z,x,y){
+        // if (filename == 'all.zip'){
+        //     // OK, do nothing
+        // }else{
+        //     return false; // Invalid
+        // }
+        
+        return path.join(this.getProjectFolderPath(), "orthophoto_tiles",z,x,y+".png");
+    }
+
     // Deletes files and folders related to this task
     cleanup(cb){
         if (this.initialized) rmdir(this.getProjectFolderPath(), cb);
